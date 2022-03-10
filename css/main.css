@@ -490,7 +490,9 @@ html {
 
 .products > h3 {
     margin-top: 3rem;
-    margin-bottom: 2.5rem
+    margin-bottom: 2.5rem;
+    font-size: 2rem;
+    
 }
 
 .list {

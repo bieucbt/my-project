@@ -504,7 +504,15 @@ html {
 .item {
     width: 100%;
     flex: 1 0 23%;
+    display: flex;
+    flex-direction: column;
     position: relative;
+    border: 1px solid #bbbbbb;
+    padding: 2px;
+}
+
+.item h3 {
+    margin-top: auto;
 }
 
 .item:first-child::before {
@@ -513,6 +521,7 @@ html {
     top: -3.5rem;
     left: -3.5rem;
     z-index: 100;
+    display: none;
     border-left: 3rem solid transparent;
     border-top: 3rem solid var(--primary-color);
     border-bottom: 3rem solid transparent;

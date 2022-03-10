@@ -1,0 +1,160 @@
+
+@media only screen and  (max-width: 64em) {
+
+    .l-0 {
+        display: none;
+    }
+
+    .header, .navbar, .content {
+        padding: 1.5rem 5%;
+    }
+
+    html {
+        font-size: 60%;
+    }
+
+    .banner {
+        max-height: 100rem;
+    }
+}
+
+@media only screen and (min-width: 48.625em) and (max-width: 63.9375em) {
+    html {
+        font-size: 55%;
+    }
+
+    .m-0 {
+        display: none;
+    }
+
+    .news-2 {
+        padding: 3rem 3rem;
+    }
+}
+
+
+@media only screen and  (max-width: 48.5625em) {
+    .c-0 {
+        display: none;
+    }
+
+    .menu.active {
+        display: block;
+    }
+
+    .list-news.row.active {
+        overflow: initial;
+        height: inherit;
+    }
+
+    .navbar{
+        justify-content: space-between;
+    }
+
+    .menu {
+        position: absolute;
+        top: 10rem;
+        left: 0;
+        z-index: 102;
+        background: white;
+        width: 100%;
+        margin: 0;
+    }
+
+    .menu a {
+        display: block;
+        border-bottom: .1rem solid;
+    }
+
+    .menu-mb {
+        --menu: 4rem;
+        display: block;
+        border: .1rem solid #999;
+        width: var(--menu);
+        height: var(--menu);
+        text-align: center;
+        line-height: var(--menu);
+        font-size: 2rem;
+        border-radius: .2rem;
+        cursor: pointer;
+    }
+
+
+
+    .members {
+        gap: 3rem;
+        flex-wrap: wrap;
+    }
+
+    .member {
+        width: 45%;
+    }
+
+    .trademark {
+        gap: 1rem;
+    }
+
+    .trademark img {
+        width: auto;
+    }
+
+    .list-news.row {
+        flex-direction: column;
+        height: 50rem;
+        overflow: hidden;
+    }
+
+    .news {
+        width: 100%;
+    }
+
+    .read-more {
+        display: block;
+    }
+
+    .news-2 {
+        padding: 3rem 2rem;
+    }
+
+    .news-2-info {
+        width: 45%;
+    }
+
+
+
+
+    .contact {
+        margin-top: 5rem;
+        justify-content: space-around;
+        align-items: initial;
+        flex-direction: column;
+        gap: 5rem;
+    }
+    
+    .products { 
+        padding: 0;
+    }
+
+    .items {
+        flex-wrap: wrap;
+    }
+
+    .item {
+        flex: 1 0 40%;
+    }
+
+
+    .footer {
+        flex-direction: column;
+        text-align: center;
+        padding-bottom: 2rem;
+    }
+
+    .cocial {
+        margin: 2rem 0;
+    }
+}
+
+
+
+

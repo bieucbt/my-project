@@ -97,11 +97,13 @@ read_more.addEventListener('click', () => {
         list_news.classList.remove('active')
         read_more.classList.remove('close')
         read_more.innerText = 'read more'
+        read_more.style = 'position: absolute;'
         hide = true
     }else {
         list_news.classList.add('active')
         read_more.classList.add('close')
         read_more.innerText = 'close'
+        read_more.style = 'position: relative;'
         hide = false
 
     }

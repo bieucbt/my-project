@@ -12,8 +12,9 @@ function handleSlide(btn_left, btn_right, items, slider, auto) {
     // cập nhật lại kích thước slide khi chạy
     setInterval(() => {
         width = items[0].offsetWidth
-    },100) 
+    },2000) 
 
+    
 
     // xử lý khi nhấn bên trái chuyển slide
     btn_left.addEventListener('click', () => {

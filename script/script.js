@@ -2,6 +2,9 @@
 $$ = document.querySelectorAll.bind(document);
 $ = document.querySelector.bind(document);
 
+
+
+
 // sử lý slider chạy
 function handleSlide(btn_left, btn_right, items, slider, auto) {
     let index = 0; // dùng để tính vị trí 
@@ -9,12 +12,33 @@ function handleSlide(btn_left, btn_right, items, slider, auto) {
     const length = items.length;
     let width 
 
+    function runSlide() {
+        if(index >= length - 1) {
+            index = 0
+            sum = 0
+            slider.style = `transform: translateX(${sum}px)`
+    
+        }else {
+            index ++
+            sum -= width
+            slider.style = `transform: translateX(${sum}px)`
+        }
+    }
+    
+
+
+
+
     // cập nhật lại kích thước slide khi chạy
     setInterval(() => {
-        width = items[0].offsetWidth
+        width = window.innerWidth
     },2000) 
 
-    
+
+     // slide chạy tự động
+     if(auto == true){
+        setInterval(runSlide, 4000)
+    }
 
     // xử lý khi nhấn bên trái chuyển slide
     btn_left.addEventListener('click', () => {
@@ -32,39 +56,10 @@ function handleSlide(btn_left, btn_right, items, slider, auto) {
     })
 
     // xử lý khi nhấn bên phải chuyển slide
-    btn_right.addEventListener('click', () => {
-        auto = false
-        if(index >= length - 1) {
-            index = 0
-            sum = 0
-            slider.style = `transform: translateX(${sum}px)`
-        }else {
-            index ++
-            sum -= width
-            slider.style = `transform: translateX(${sum}px)`
-        }
-        
-    })
-    // làm chậm slide auto khi kích chuyển slide bằng tay
-    setInterval(() => {auto = true}, 5000)
+    btn_right.addEventListener('click', runSlide)
 
 
-    // slide chạy tự động
-    if(auto == true){
-        setInterval(() => {
-            if(index >= length - 1) {
-                index = 0
-                sum = 0
-                slider.style = `transform: translateX(${sum}px)`
-
-            }else {
-                index ++
-                sum -= width
-                slider.style = `transform: translateX(${sum}px)`
-
-            }
-        }, 4000)
-    }
+    
 
     
 }

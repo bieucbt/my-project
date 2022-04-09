@@ -8,92 +8,6 @@ $ = document.querySelector.bind(document);
 
 
 
-// sử lý slider chạy
-function handleSlide(btn_left, btn_right, items, slider, auto) {
-    let index = 0; // dùng để tính vị trí 
-    let sum = 0; // lấy tổng của item rồi cách ra như kiểu trượt
-    const length = items.length;
-    let width = window.innerWidth
-
-     // cập nhật lại kích thước slide khi chạy (chưa fix xong)
-    function handleResize() {
-        width = window.innerWidth
-        setTimeout(autoSlide,8000)
-    }
-    window.addEventListener('resize', handleResize)
-    if(window.addEventListener('resize', handleResize)){
-        setTimeout(autoSlide,8000)
-    }else if(runSlideRight) {
-        setTimeout(autoSlide,8000)
-    }else if(runSlideLeft) {
-        setTimeout(autoSlide,8000)
-    }else {
-        setTimeout(autoSlide,4000)
-    }
-    setInterval(() => console.log(width), 1000)
-
-    function runSlideRight() {
-        if(index >= length - 1) {
-            index = 0
-            sum = 0
-            slider.style = `transform: translateX(${sum}px)`
-    
-        }else {
-            index ++
-            sum -= width
-            slider.style = `transform: translateX(${sum}px)`
-        }
-        
-    }
-    
-    function runSlideLeft(){
-        auto = false
-    
-        if(index <= 0) {
-            index = (length - 1)
-            sum -= (width * (length - 1))
-            slider.style = `transform: translateX(${sum}px)`
-        }else {
-            sum += width
-            slider.style = `transform: translateX(${sum}px)`
-            index--
-        }
-    }
-
-
-        // slide chạy tự động
-        function autoSlide(){
-            if(auto == true){
-                setInterval(() => {
-
-                    if(index >= length - 1) {
-                        index = 0
-                        sum = 0
-                        slider.style = `transform: translateX(${sum}px)`
-                
-                    }else {
-                        index ++
-                        sum -= width
-                        slider.style = `transform: translateX(${sum}px)`
-                    }
-
-                }, 4000)
-            }
-        }
-
-       
-    
-       // xử lý khi nhấn bên trái chuyển slide
-       btn_left.addEventListener('click', runSlideLeft)
-    
-       // xử lý khi nhấn bên phải chuyển slide
-       btn_right.addEventListener('click', runSlideRight)
-    
-    
-
-}
-
-
  // sử lý đóng mở menu
  const menu_mb = $('.menu-mb');
  const sub_menu_mb = $('.menu');
@@ -110,6 +24,12 @@ function handleSlide(btn_left, btn_right, items, slider, auto) {
              sub_menu_mb.classList.remove('active')
      }))
  })
+
+window.onscroll = () => {
+    menu_mb.classList.add('fa-bars')
+    menu_mb.classList.remove('fa-x')
+    sub_menu_mb.classList.remove('active')
+}
 
 
  // sử lý read more bài báo
@@ -132,3 +52,6 @@ function handleSlide(btn_left, btn_right, items, slider, auto) {
 
      }
  })
+
+
+

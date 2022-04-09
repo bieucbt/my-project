@@ -155,6 +155,7 @@ html {
 }
 
 .byteknights p {
+    margin-top: 2rem;
     font-size: 1.3rem;
     color: var(--color-sub-text);
     font-weight: 600;
@@ -241,6 +242,7 @@ html {
     min-height: 10rem;
     width: 16.666%;
     padding: 0 .5rem;
+    margin-top: 1rem;
 }
 
 
